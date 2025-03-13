@@ -44,8 +44,14 @@
 
             ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 
-            ctx.fillStyle = 'lightblue';
+            ctx.fillStyle = 'Blue';
             ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+      // "Start" button.
+            const text = 'Play!';
+            ctx.fillStyle = 'black'; // Text color
+            ctx.font = '24px Arial'; // Font size and family
+            ctx.textAlign = 'center'; // Center text horizontally
+            ctx.textBaseline = 'middle'; // Center text vertically
 
       // Draw a rectangle 
       ctx.fillStyle = "red";
