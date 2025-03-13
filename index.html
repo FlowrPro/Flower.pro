@@ -39,10 +39,13 @@
             
 
 
-      //Title screen
-      ctx.font = "30px Arial";
-      ctx.fillStyle = "black";
-      ctx.fillText("Flowrs.pro! - A florr.io copy", 400, 50);
+ctx.font = "30px Arial";
+ctx.fillStyle = "black";
+
+// Calculate the vertical position slightly above the middle
+const verticalPosition = canvas.height / 2 - 55; // Adjust 50 to move it up or down
+
+ctx.fillText("Flowrs.pro! - A florr.io copy", 400, verticalPosition);
     }
 
     function resizeCanvas() {
