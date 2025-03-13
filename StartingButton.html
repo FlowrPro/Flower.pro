@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Centered Rectangle with Text</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawRectangle();
+        }
+
+        function drawRectangle() {
+            const rectWidth = 200; // Increased width
+            const rectHeight = 100; // Increased height
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const rectX = centerX - rectWidth / 2;
+            const rectY = centerY - rectHeight / 2;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'lightblue';
+            ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+            // Text
+            const text = 'Hello!';
+            ctx.fillStyle = 'black'; // Text color
+            ctx.font = '24px Arial'; // Font size and family
+            ctx.textAlign = 'center'; // Center text horizontally
+            ctx.textBaseline = 'middle'; // Center text vertically
+
+            ctx.fillText(text, centerX, centerY); // Draw the text in the center of the rectangle.
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+</body>
+</html>
