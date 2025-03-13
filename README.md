@@ -1,0 +1,1 @@
+As stated in in the other file, you can look at my script and make a spinoff of it, but you cannot commerically or publicly make a game based off this code. This is a simple io game based off of "florr.io".
