@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Canvas Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden; /* Prevents scrollbars */
+    }
+    canvas {
+      display: block; /* Removes default inline spacing */
+      background-color: #f0f0f0; /* Optional background color */
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Set canvas dimensions to match window size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Optional: Resize canvas on window resize
+    window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        draw(); //redraw after resize.
+    });
+
+    function draw() {
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw a rectangle (example)
+      ctx.fillStyle = "red";
+      ctx.fillRect(50, 50, 100, 100);
+
+      // Draw a circle (example)
+      ctx.beginPath();
+      ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      //Draw a line (example)
+      ctx.beginPath();
+      ctx.moveTo(10,10);
+      ctx.lineTo(200,200);
+      ctx.strokeStyle = "green";
+      ctx.stroke();
+
+      //Draw some text.
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "black";
+      ctx.fillText("Hello Canvas!", 400, 50);
+    }
+
+    // Initial draw
+    draw();
+
+    //Example of a simple game loop.
+    function gameLoop(){
+        //update game state here.
+        draw();
+        requestAnimationFrame(gameLoop);
+    }
+
+    //Start the game loop.
+    gameLoop();
+
+  </script>
+</body>
+</html>
