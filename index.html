@@ -34,28 +34,40 @@
     function draw() {
       // Clear the canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            const rectWidth = 100;
+            const rectHeight = 50;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const rectX = centerX - rectWidth / 2;
+            const rectY = centerY - rectHeight / 2;
 
-      // Draw a rectangle (example)
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+            ctx.fillStyle = 'lightblue';
+            ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+      // Draw a rectangle 
       ctx.fillStyle = "red";
       ctx.fillRect(50, 50, 100, 100);
 
-      // Draw a circle (example)
+      // Draw a circle 
       ctx.beginPath();
       ctx.arc(300, 100, 50, 0, 2 * Math.PI);
       ctx.fillStyle = "blue";
       ctx.fill();
 
-      //Draw a line (example)
+      //Draw a line 
       ctx.beginPath();
       ctx.moveTo(10,10);
       ctx.lineTo(200,200);
       ctx.strokeStyle = "green";
       ctx.stroke();
 
-      //Draw some text.
+      //Title screen
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
-      ctx.fillText("Hello Canvas!", 400, 50);
+      ctx.fillText("Flowrs.pro! - A florr.io copy", 400, 50);
     }
 
     // Initial draw
